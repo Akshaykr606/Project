@@ -1,0 +1,32 @@
+{% extends "Sort/Sort_container.html" %}
+{% block body %}
+<head>
+	<link rel="stylesheet" href="/static/quick_sort/style.css" />
+</head>
+<body>
+<h2 align="center"><strong>Quick Sort</strong></h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-10">
+
+                <input type="text" value="" id="arry" placeholder="Enter elements" class="txt">
+                <input type="button" value="Enter" id="Enter" onclick="Userarray()" class="btn">
+                <input type="button" value="Generate Random" id="gr"onclick="Randomarray()" class="btn">
+                <input type="button" value="Sort" onclick="qsort(),disable()" id="sort" class="btn">
+                <button onClick="window.location.reload();" class="btn">Reset</button>
+
+            </div>
+            <div class="col-2">
+                <label>Delay Speed</label>
+                <input type="range" class="custom-range" min="5" max="1000" value="505" id="myRange">
+            </div>
+        </div>
+    </div>
+
+	<div id="array"></div>
+	<div id="count"></div>
+	<br />
+	<h2 class="range" style="text-align: center"></h2>
+	<script src="/static/quick_sort/script.js"></script>
+</body>
+{% endblock %}

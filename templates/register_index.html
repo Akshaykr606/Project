@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Register Now</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="/static/regindex/fonts/material-icon/css/material-design-iconic-font.min.css">
+    <link href="/static/admin_templates1/img/logo/AVLOGO.jpg" rel="icon">
+    <!-- Main css -->
+    <link rel="stylesheet" href="/static/regindex/css/style.css">
+</head>
+<body>
+    <div>
+        <div class="container">
+            <div class="signup-content">
+{#                <div class="img1s">#}
+{#                    <img src="/static/regindex/images/l_img.png" height="600" width="880" alt="Image" >#}
+{#                </div>#}
+                <div class="signup-form">
+                    <form method="POST" class="register-form" id="register-form" action="/form1_post">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" name="txt_fname" id="name" placeholder="First Name" required/>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="txt_lname" id="father_name" placeholder="Last Name" required/>
+                            </div>
+                        </div>
+{#                        <div class="form-group">#}
+{#                            <input type="file" name="address" id="address"  required/>#}
+{#                        </div>#}
+                        <div class="form-radio">
+                            <label for="gender" class="radio-label">Gender :</label>
+                            <div class="form-radio-item">
+                                <input type="radio" value="male" name="gender" id="male">
+                                <label for="male">Male</label>
+                                <span class="check"></span>
+                            </div>
+                            <div class="form-radio-item">
+                                <input type="radio" value="female" name="gender" id="female">
+                                <label for="female">Female</label>
+                                <span class="check"></span>
+                            </div>
+                        </div>
+                         <div class="form-group">
+                            <input type="email" name="txt_email" id="email" placeholder="Email ID " />
+                        </div>
+{#                        <div class="form-row">#}
+{#                            <div class="form-group">#}
+{#                                <label for="state">State :</label>#}
+{#                                <div class="form-select">#}
+{#                                    <select name="state" id="state">#}
+{#                                        <option value=""></option>#}
+{#                                        <option value="us">America</option>#}
+{#                                        <option value="uk">English</option>#}
+{#                                    </select>#}
+{#                                    <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <div class="form-group">#}
+{#                                <label for="city">City :</label>#}
+{#                                <div class="form-select">#}
+{#                                    <select name="city" id="city">#}
+{#                                        <option value=""></option>#}
+{#                                        <option value="losangeles">Los Angeles</option>#}
+{#                                        <option value="washington">Washington</option>#}
+{#                                    </select>#}
+{#                                    <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <div class="form-group">#}
+{#                            <label for="birth_date">DOB :</label>#}
+{#                            <input type="text" name="birth_date" id="birth_date">#}
+{#                        </div>#}
+{#                        <div class="form-group">#}
+{#                            <label for="pincode">Pincode :</label>#}
+{#                            <input type="text" name="pincode" id="pincode">#}
+{#                        </div>#}
+{#                        <div class="form-group">#}
+{#                            <label for="course">Course :</label>#}
+{#                            <div class="form-select">#}
+{#                                <select name="course" id="course">#}
+{#                                    <option value=""></option>#}
+{#                                    <option value="computer">Computer Operator & Pragramming Assistant</option>#}
+{#                                    <option value="desiger">Designer</option>#}
+{#                                    <option value="marketing">Marketing</option>#}
+{#                                </select>#}
+{#                                <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>#}
+{#                            </div>#}
+{#                        </div>#}
+                        <div class="form-group">
+                            <input type="text" name="txt_phone" id="contact" placeholder="Contact "/>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" name="txt_psw" id="contact" placeholder="Password " />
+                        </div>
+                        <div class="form-group">
+                            <input type="password" name="txt_psw1" id="contact" placeholder="Confirm Password " />
+                        </div>
+                        <div class="form-submit">
+                            <input type="submit" value="Clear" class="submit" name="reset" id="reset" />
+                            <input type="submit" value="Register" class="submit" name="submit" id="submit" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JS -->
+    <script src="/static/regindex/vendor/jquery/jquery.min.js"></script>
+    <script src="/static/regindex/js/main.js"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
