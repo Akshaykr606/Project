@@ -1,7 +1,8 @@
 {% extends "Searching/Search_container.html" %}
 {% block body %}
 
-<head>
+<!--suppress ALL -->
+    <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet"  />
@@ -104,13 +105,15 @@
 
       // Creating an array
       var arr = [];
+      var bb=[];
     document.getElementById("array").innerHTML="";
       // Filling array with random values
-      for (var i = 0; i < 10; i++) {
+      for (var i = 0; i < 20; i++) {
         // Return a value from 1 to 100 (both inclusive)
         var val = Number(Math.ceil(Math.random() * 100));
         arr.push(val);
       }
+
       m=arr;
 
       // Sorting Array in ascending order
@@ -118,7 +121,7 @@
         return a - b;
       });
 
-      for (var i = 0; i < 10; i++) {
+      for (var i = 0; i < 20; i++) {
         var value = arr[i];
 
         // Creating element div
@@ -197,11 +200,6 @@
     // Asynchronous BinarySearch function
     async function BinarySearch(delay = 100) {
 
-
-
-{#        delay=1000;#}
-
-
       var blocks = document.querySelectorAll(".block");
       var output = document.getElementById("text");
 
@@ -213,13 +211,15 @@
       //Colouring all the blocks voilet
       for (var i = 0; i < blocks.length; i += 1) {
 
+{#              blocks[i].style.backgroundColor = "#ce1524";#}
+
+
               await new Promise((resolve) =>
           setTimeout(() => {
             resolve();
           }, delay)
         );
 
-          blocks[i].style.backgroundColor = "#6b5b95";
       }
       output.innerText = "";
 
@@ -228,110 +228,91 @@
       var mid = 0;
       var end =m.length;
       var flag = 0;
-{#      while (mid< end) {#}
-{#        //Middle index#}
-{##}
-{#        blocks[mid].style.backgroundColor = "#FF4949";#}
 
-        //Value at mid index
-{#        var value = Number(blocks[mid].childNodes[0].innerHTML);#}
+    let jump = Math.ceil(Math.sqrt(n));
 
-{#        blocks[mid].style.backgroundColor = "#FF4949";#}
+{#    alert(jump)#}
 
-          // Finding block size to be jumped
-    let step = Math.sqrt(n);
-{# alert("m--"+m)#}
-{#    alert("n--"+n)#}
-{#    alert("step--"+step)#}
 
-    // Finding the block where element is
-    // present (if it is present)
     let prev = 0;
-    while (m[Math.min(step, n)-1] < x)
-    {
-
-            await new Promise((resolve) =>
-          setTimeout(() => {
-            resolve();
-          }, delay)
-        );
+    ms=Math.min(jump-1, n);
+{#    alert(ms);#}
 
 
 
-        prev = step;
-        step += Math.sqrt(n);
-        if (prev >= n)
-            return -1;
-    }
+    let left=0;
+      let  right = n;
+
+     while (left < n && m[left] <= x)
+        {
+            right = Math.min(n - 1, left + jump);
+
+
+            if (m[left] <= x && m[right] >= x)
+                break;
+
+
+{#           alert(left+"left");#}
+
+                await new Promise((resolve) =>
+                      setTimeout(() => {
+                        resolve();
+                      }, delay)
+                    );
+
+
+                    console.log("red color");
+                    blocks[left].style.backgroundColor = "#ff0000";
+
+  left += jump
 
 
 
+        }
 
-        // To wait for .1 sec
-        await new Promise((resolve) =>
-          setTimeout(() => {
-            resolve();
-          }, delay)
-        );
+            if (left >= n || m[left] > x)
+               return -1
+    else {
+{#         alert(left);#}
+{#                print(left)#}
 
-        //Current element is equal to the element
-        //entered by the user
-{#        if (value == num) {#}
-{##}
-{#          output.innerText = "Element Found at position "+( mid+1);#}
-{#          blocks[mid].style.backgroundColor = "#13CE66";#}
-{#          flag = 1;#}
-{#          break;#}
-{#        }#}
+                                await new Promise((resolve) =>
+                      setTimeout(() => {
+                        resolve();
+                      }, delay)
+                    );
 
 
-
-
-          while (m[prev] < x)
-            {
-                prev++;
-
-                   await new Promise((resolve) =>
-          setTimeout(() => {
-            resolve();
-          }, delay)
-        );
-
-        // If we reached next block or end of
-        // array, element is not present.
-                if (prev == Math.min(step, n)) {
-                    blocks[prev].style.backgroundColor = "#ff0000";
-                    return -1;
-                }
-                else{
-              blocks[prev].style.backgroundColor = "#ff0000";
-
-                }
-
-
-
-
-
-            }
-    // If element is found
-            if (m[prev] == x) {
-{#              alert("x--"+x)#}
-{#              alert("x1--"+m[prev])#}
-                output.innerText = "Element Found at position " + (prev+1);
-                blocks[prev].style.backgroundColor = "#13CE66";
-                flag = 1;
-
-
+                    console.log("red color");
+{#                    alert(left)#}
+                    if(left<n) {
+{#                        blocks[left].style.backgroundColor = "#ff0000";#}
+                        blocks[left].style.backgroundColor = "#ff0000";
+                    }
 
             }
 
-        //Current element is greater than the element
-        //entered by the user
-            else {
-{#                alert("elsese")#}
-{#                if(prev<end) {#}
-{#                    alert("else alert")#}
+    right = Math.min(n - 1, right)
+    temp = left
 
+
+
+    while (temp <= right && m[temp] <= x) {
+{#        alert("linear"+temp)#}
+
+                        await new Promise((resolve) =>
+                      setTimeout(() => {
+                        resolve();
+                      }, delay)
+                    );
+
+
+                    console.log("red color");
+
+                    blocks[temp].style.backgroundColor = "#faff21";
+
+        if (m[temp] == x) {
+{#            alert(temp)#}
                             await new Promise((resolve) =>
                       setTimeout(() => {
                         resolve();
@@ -340,16 +321,27 @@
 
 
                     console.log("red color");
-                    blocks[prev].style.backgroundColor = "#ff0000";
-                    mid = mid + 1;
-{#                }#}
-           }
-{#      }#}
-      if (flag === 0) {
-        output.innerText = "Element Not Found";
-      }
+                    blocks[temp].style.backgroundColor = "#1bff13";
+            return temp
+        }
+        temp += 1
     }
-    // Calling generatearray function
+        return -1
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+
     generatearray();
 
 </script>

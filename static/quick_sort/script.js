@@ -97,6 +97,7 @@ async function hoare_partition(l, r, delay = 75) {
 			return j;
 		}
 
+
 		//swapping ith and jth element
 		var temp1 = blocks[i].style.height;
 		var temp2 = blocks[i].childNodes[0].innerText;
@@ -116,6 +117,8 @@ async function hoare_partition(l, r, delay = 75) {
 
 // Asynchronous QuickSort function
 async function QuickSort(l, r, delay = 100) {
+		flag=0;
+	timer1();
 	// QuickSort Algorithm
 	if (l < r) {
 		//Storing the index of pivot element after partition
@@ -136,8 +139,9 @@ async function QuickSort(l, r, delay = 100) {
       //To enable the button generate random
       document.getElementById("gr").disabled = false;
       document.getElementById("gr").style.backgroundColor = "#37517e";
+      flag=1;
 }
-
+	var flag=0;
 function Randomarray() {
 
 	// arr=[50,10,20,40,30];
@@ -198,3 +202,5 @@ function Randomarray() {
       document.getElementById("gr").disabled = true;
       document.getElementById("gr").style.backgroundColor = "#AED6F1";
     }
+
+

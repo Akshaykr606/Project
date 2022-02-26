@@ -9,9 +9,6 @@ app.secret_key="a"
 
 #=====================================================Reg Form=========================================================#
 
-# @app.route('/form1_load')
-# def form1_load():
-#     return render_template("form1.html")
 @app.route('/regindex')
 def regindex():
     return render_template("register_index.html")
@@ -31,6 +28,21 @@ def form1_post():
     lid=c.insert(qry)
     qry1="insert into user(firstname,lastname,gender,email,contact,loginid) values('"+fname+"','"+lname+"','"+gender+"','"+Email+"','"+Contact+"','"+str(lid)+"')"
     c.insert(qry1)
+
+    # email = request.form['eml']
+    # n_pwd = request.form['npwd']
+    # password = str(n_pwd)
+    s = smtplib.SMTP(host='smtp.gmail.com', port=587)
+    s.starttls()
+    s.login("visualiseralgorithm@gmail.com", "PwoliprojecT")
+    msg = MIMEMultipart()  # create a message.........."
+    message = "Messege from ALGORITHM VISUALIZER"
+    msg['From'] = "visualiseralgorithm@gmail.com"
+    msg['To'] = Email
+    msg['Subject'] = "Registration"
+    body = "You our dear user has registered successfully to our website "
+    msg.attach(MIMEText(body, 'plain'))
+    s.send_message(msg)
     return render_template("login_index.html")
 
 #===================================================login section======================================================#
@@ -80,7 +92,13 @@ def fgtpwd_post():
     body = "Your password has been changed . You Can Now login using your password - " + str(password)
     msg.attach(MIMEText(body, 'plain'))
     s.send_message(msg)
-    return fgt_pwd()
+    qry="select * from user where email='"+email+"'"
+    db=Db()
+    res=db.selectOne(qry)
+
+    qr1="update login set password='"+n_pwd+"' where loginid='"+str(res["loginid"])+"'"
+    db.update(qr1)
+    return '''<script>alert('Password changed successfully');window.location='/'</script>'''
 
 #==================================================ADMIN SECTION=======================================================#
 
@@ -162,7 +180,7 @@ def doubtclr1():
     print(qry)
     res=c.select(qry)
     print(res)
-    return render_template("admin/Doubtclearence.html",data=res)
+    return render_template("admin/View_Doubt.html", data=res)
 
 @app.route('/dbtclrply/<m>')
 def doubtclrr(m):
@@ -237,6 +255,18 @@ def userindexpost():
     print(qry)
     text1="thanks"
     return render_template("user/feedback.html")
+
+#---------------------------------View Feedback Replies------------------
+
+@app.route('/freply1')
+def feedback1():
+    c=Db()
+    qry = "select feedback.* from feedback where feedback.user_loginid='" + str(session['lid']) + "' and feedback_status='replied'"
+    # qry="select feedback.*,user.* from user,feedback where feedback.user_loginid=user.loginid and feedback.feedback_status='replied'"
+    print(qry)
+    res=c.select(qry)
+    print(res)
+    return render_template("user/userfeedbackreply.html", res=res)
 
 #===================================================User Algorithm=====================================================#
 
@@ -334,13 +364,13 @@ def ds():
 
 @app.route('/queue')
 def queue():
-    return render_template("Data_Structure/queue_ani.html")
+    return render_template("Data_Structure/queue.html")
 
 #------------------------Stack----------------------------------------
 
 @app.route('/stack')
 def stack():
-    return render_template("Data_Structure/stack_ani.html")
+    return render_template("Data_Structure/stack.html")
 
 #-------------------------Linked list----------------------------------
 
@@ -380,36 +410,13 @@ def public():
     session["kk"]="public"
     return render_template("Public/public.html")
 
+#=========================================================Info========================================================#
+
+@app.route('/info')
+def info():
+    return render_template("user/info.html")
+
 #======================================================================================================================#
-
-
-#=========================================================Extra========================================================#
-
-# @app.route('/registrationpost',methods=['post'])
-# def regpost():
-#     print(".......................................")
-#     c=Db()
-#     name=request.form['name']
-#     print(name)
-#     session["username"]=name
-#     DOB=request.form['dob']
-#     print(DOB)
-#     Gender = request.form['gender']
-#     print(Gender)
-#     Place = request.form['tarea']
-#     print(Place)
-#     District = request.form['district']
-#     print(District)
-#     Qualification = request.form['quali']
-#     print(Qualification)
-#     Photo = request.files['photo']
-#     print(Photo)
-#     Photo.save("C:\\Users\\91949\\PycharmProjects\\sample\\static\\img\\"+Photo.filename)
-#     path="/static/image/"+Photo.filename
-#     qry="insert into regform (Name,DOB,Gender,Place,District,Qualification,Photo) values('"+name+"','"+DOB+"','"+Gender+"','"+Place+"','"+District+"','"+Qualification+"','"+path+"')"
-#     res=c.insert(qry)
-#     return render_template("user/feedback.html", data=name)
-
 #======================================================================================================================#
 
 if __name__ == '__main__':

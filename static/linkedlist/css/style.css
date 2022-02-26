@@ -439,12 +439,14 @@ div.wrapper > div:nth-child(4) input {
 button#remove-btn {
     width: 70%;
     font-family: "Times New Roman";
+    border-radius: 5px 0px 0px 5px ;
     background: linear-gradient(to right, #ff002b, #9f0000);
 }
 
 button#remove-settings {
     width: 30%;
     font-size: 1.3rem;
+    border-radius: 0px 5px 5px 0px ;
     background: #9f0000;
 }
 

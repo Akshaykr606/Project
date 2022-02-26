@@ -20,7 +20,7 @@
 
     #array {
         background-color: white;
-        height: 340px;
+        height: 330px;
         width: auto;
         margin:0 auto;
         position: relative;
@@ -57,20 +57,30 @@
     .txt{
         height: 40px;
     }
+.btns{
+    height:40px;
+    width:40px;
+    border-radius:30px;
+}
 
 </style>
 
 {#<body>#}
 	 <h2 align="center"><strong>Bubble Sort</strong></h2>
+
      <div class="container">
          <div class="row" >
-                <div class="col-10">
+                <div class="col-8">
                     <input type="text" id="user-value" placeholder="Enter elements" class="txt">
                     <input type="button" value="Enter"  style="width:90px" id="lmt-value" class="btn">
                     <input type="button" value="Random" id="gr" class="btn">
                     <input type="button" value="Sort" id="sort" class="btn">
                     <button onClick="window.location.reload();" class="btn">Reset</button>
                 </div>
+             <div class="col-2">
+{#                 <label>Timer</label>#}
+{#                 <p id="demo"><b></b></p>#}
+             </div>
               <div class="col-2">
                    <label>Delay Speed</label>
                     <input type="range" min="5" max="1000"  value="505" class="custom-range" id="myRange">
@@ -78,7 +88,7 @@
          </div>
      </div>
 
-    <div class="row">
+    <div class="row" >
         <div class="col-md-4"></div>
                 <div class="col-md-4">
                     <div id="array"></div><br>
@@ -86,8 +96,18 @@
                         <div id="text"></div>
                     </div>
                 </div>
-
-        <div class="col-md-4"></div>
+    </div>
+    <div>
+     <table>
+        <tr>
+            <td width="60px"><button class="btns" style="background-color: #13CE66" value=""></button></td>
+            <td width="70px">Sorted</td>
+            <td width="60px"><button  class="btns" style="background-color: #FF4949"></button></td>
+            <td width="100px">Movement</td>
+            <td width="60px"><button style="background-color: #6b5b95" class="btns"></button></td>
+            <td width="100px">Default</td>
+        </tr>
+    </table>
     </div>
 
 <script>
@@ -134,7 +154,6 @@
                  array_ele.appendChild(array_ele_label);
                  container.appendChild(array_ele);
              }
-
          }
 
     // Promise to swap two blocks
@@ -160,6 +179,9 @@
     // Asynchronous BubbleSort function
              //change delay of sort
     async function BubbleSort(delay = 75) {
+             flag=0;
+
+             timer1();
              delay= document.getElementById("myRange").value;
 
         var blocks = document.querySelectorAll(".block");
@@ -212,7 +234,14 @@
       //To enable the button generate random
       document.getElementById("gr").disabled = false;
       document.getElementById("gr").style.backgroundColor = "#37517e";
+
+      flag=1;
+
+
+
     }
+
+    var flag=0;
     function disable()
     {
       // To disable the button "Generate New Array"
@@ -284,16 +313,44 @@
 
 </script>
 </body>
+
+<script>
+
+var i=0;
+// Set the date we're counting down to
+var countDownDate = new Date("Jan 5, 2024 15:37:25").getTime();
+
+function  timer1() {
+var x = setInterval(function() {
+    i=i+1;
+  // Get today's date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+{#  document.getElementById("demo").innerHTML = days + "d " + hours + "h "#}
+{#  + minutes + "m " + seconds + "s ";#}
+
+if(flag==0) {
+    document.getElementById("demo").innerHTML = i.toString();
+}
+
+  // If the count down is finished, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+
+}
+// Update the count down every 1 second
+</script>
 {% endblock %}
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,11 +1,11 @@
 {% extends "admin/admin_index.html" %}
 {% block body %}
-<form action="/viewfdbk1" method="post">
+<form action="/viewfdbk1" method="post"><br>
     <h2 align="center"><strong>Feedbacks</strong></h2>
     <table class="pull-left" cellpadding="4px">
         <tr><td>
-            <input name="dateFrom" type="date" class="form-control" /></td>
-            <td><input name="dateTo" type="date" class="form-control" /></td>
+            <input name="dateFrom" type="date" class="form-control" required/></td>
+            <td><input name="dateTo" type="date" class="form-control" required/></td>
             <td><input name="Search" value="Search" type="submit" class="btn btn-info"/></td>
         </tr>
     </table><br>

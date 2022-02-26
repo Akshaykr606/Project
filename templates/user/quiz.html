@@ -70,13 +70,6 @@
                                 </table>
                             </div><br>
                             <div class="result"></div>
-{#                            <div id="" class="navigation">#}
-{#                                <button class="prev" id="btnxt">< Previous</button>#}
-{#                                <button class="evaluate" id="btnev" hidden>Evaluate</button>#}
-{#                                 <button class="Finish" name="btnF" id="btnF">Finish</button>#}
-{#                                <button class="next" name="btnxt" id="btnxt">Next ></button>#}
-{##}
-{#                            </div>#}
                         <label id="marks" name="marks"></label>
                     </center>
                 </div>
@@ -181,22 +174,6 @@ h1, h2, h3, h4, h5, h6 {
         color: white;
         border-color: #2E86C1;
 }
-
-{##btnev{#}
-{#        background-color: #53e318;#}
-{#        color: white;#}
-{#        border-radius:5px;#}
-{#        height: 43px;#}
-{#        width: 150px;#}
-{#        border-color: #37517e;#}
-{#        }#}
-
-{##btnev:hover{#}
-{#        background-color: #2ECC71;#}
-{#        color: white;#}
-{#        border-color: #2E86C1;#}
-{#}#}
-
 
 th{
     padding: 30px;
@@ -604,32 +581,15 @@ section {
   return array;
 }
 
-// Used like so
 var arr = [0,1,2,3,4,5,6,7,8,9];
 shuffle(arr);
 console.log(arr);
-
-
-
 var c=0;
-
-
-// Set start
 var start = true;
 
-// Iterate
 function iterate(id) {
 
-	// Getting the result display section
-
-{#      var result = document.getElementsByClassName("result");#}
-{##}
-{#	result[0].innerText = "";#}
-
-	// Getting the question
 	const question = document.getElementById("question");
-
-
 	// Setting the question text
 	question.innerText = (id+1)+". "+ Questions[arr[id]].q;
 
@@ -663,17 +623,6 @@ function iterate(id) {
 		op4.style.backgroundColor = "#47b2e4";
 		selected = op1.value;
 
-{#		if (selected == "true") {#}
-{#			result[0].innerHTML = "Correct";#}
-{#			result[0].style.color = "green";#}
-{#			c=c+1;#}
-{#		} else {#}
-{#			result[0].innerHTML = "Wrong";#}
-{#			result[0].style.color = "red";#}
-{#		}#}
-
-
-
 	})
 
 	// Show selection for op2
@@ -704,29 +653,9 @@ function iterate(id) {
 		op4.style.backgroundColor = "orange";
 		selected = op4.value;
 	})
-
-
-
-
-
-	// Grabbing the evaluate button
-	//const evaluate = document.getElementsByClassName("evaluate");
-
-	// Evaluate method
-{#	evaluate[0].addEventListener("click", () => {#}
-{#		if (selected == true) {#}
-{#			result[0].innerHTML = "Correct";#}
-{#			result[0].style.color = "green";#}
-{#			c=c+1;#}
-{#		} else {#}
-{#			result[0].innerHTML = "Wrong";#}
-{#			result[0].style.color = "red";#}
-{#		}#}
-{#	})#}
 }
 
 if (start) {
-
 	iterate(0);
 }
 
@@ -735,25 +664,14 @@ const next = document.getElementsByClassName('next')[0];
 var id = 0;
 var d=Questions.length;
 
-
-
 btnF.addEventListener("click", () => {
-
-
-
     document.getElementById('marks').innerHTML="<strong>Total marks : </strong>"+c.toString();
-
-{#    alert(c);#}
-
-
 });
-
 
 next.addEventListener("click", () => {
 	start = false;
   var result = document.getElementsByClassName("result");
 
-{#  alert(selected.toString())#}
 
 	if (selected.toString() =="true" ) {
 			result[0].innerHTML = "Correct";
@@ -765,49 +683,23 @@ next.addEventListener("click", () => {
 		}
 
 		selected="";
-
-
-
-
 		id++;
-
 
 		op1.style.backgroundColor = "#47b2e4";
 		op2.style.backgroundColor = "#47b2e4";
 		op3.style.backgroundColor = "#47b2e4";
 		op4.style.backgroundColor = "#47b2e4";
-{#	var li=[1,2,3,4,5,6,7,8,9,10];#}
-{#	var id= Math.floor(Math.random() * 10) + 1;#}
 	if (id < 10) {
-
 		iterate(id);
 		console.log(id);
 		console.log("========================="+d)
 	}
 	else if(d=9) {
 
-{#        alert("Over!!");#}
 	     document.getElementById('btnxt').style.visibility = 'hidden';
          document.getElementById('btnF').style.visibility = 'visible';
-{#         document.getElementById('btnev').style.visibility = 'hidden';#}
-
-
-
-
-
-
     }
-
-
-
-
 });
-
-{#if (end) {#}
-{#	iterate("8");#}
-{#}#}
-
-
 </script>
 
 </html>

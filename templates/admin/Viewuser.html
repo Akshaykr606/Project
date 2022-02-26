@@ -1,11 +1,11 @@
 {% extends "admin/admin_index.html" %}
 {% block body %}
 
-<form id="form1" name="form1" method="post" action="/viewusrBYSEARCH">
+<form id="form1" name="form1" method="post" action="/viewusrBYSEARCH"><br>
     <h2 align="center"><strong>Registered Users</strong></h2>
 <table class="pull-right" cellpadding="4px">
 <tr><td>
-    <input name="Searchbar"  type="text" size="10" maxlength="25"  class="form-control" placeholder="Search Name"></td>
+    <input name="Searchbar" type="text" size="10" maxlength="25" class="form-control" placeholder="Search Name" required></td>
     <td><input name="Searchbutton" value="Search" type="submit" class="btn btn-info" /></td></tr>
 
 </table><br>

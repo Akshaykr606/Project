@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Doubt</title>
+  <title>Feedback Reply</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -31,54 +31,65 @@
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top ">
     <div class="container d-flex align-items-center">
-      <h1 class="logo me-auto"><a href="#">Doubts</a></h1>
+
+      <h1 class="logo me-auto"><a href="#">Feedback Reply</a></h1>
+
         <nav id="navbar" class="navbar">
         <ul>
+
           <li><a class="getstarted scrollto" href="/userhome">Home</a></li>
+
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
+
     </div>
   </header><!-- End Header -->
+
+
+
   <main id="main">
 
 <section id="algorithm" class="services section-bg">
       <div class="container" data-aos="fade-up">
+
         <div class="section-title"></div>
         <div class="row" id="nm">
             <div class="col-xl-12 col-lg-7 mb-4" id="nn">
                 <div class="icon-box"  id="row">
                     <div class=""><i class=""></i></div>
                     <center>
-                    <form action="/dbspost" method="post">
-                        <h1 align="center"><strong>Ask Doubts</strong></h1><br><br>
-                        <textarea name="Reply" cols="60" rows="9" placeholder="Enter your questions" required></textarea><br /><br />
-                        <input type="submit" class="btn" value="SEND">
-                    </form><br><br><br>
-                        <h1 align="center"><strong>Doubts Replies</strong></h1><br>
+                        <h1 align="center"><strong>Feedback Replies</strong></h1><br>
                          <table class="table table-hover">
                               <thead class="thread-dark">
                                     <tr>
                                         <th>#</th>
                                         <th>Date</th>
-                                        <th>Doubt</th>
-                                        <th>Answer</th>
+                                        <th>Feedback</th>
+                                        <th>Reply</th>
                                     </tr>
                               </thead>
+
                             {% for i in res %}
                                 <tr>
+
                                 <td>{{ loop.index }}</td>
                                 <td>{{ i['date'] }}</td>
-                                <td>{{ i['doubt'] }}</td>
-                                <td>{{ i['answer'] }}</td>
+                                <td>{{ i['feedback'] }}</td>
+                                <td>{{ i['reply'] }}</td>
+
                                 </tr>
 
                             {% endfor %}
                         </table>
+
+
                     </center>
                 </div>
             </div>
+
         </div>
+
       </div>
     </section>
 
@@ -156,6 +167,11 @@
     background-color: #6c6e7e;;
     border-color: #6c6e7e;;
     color: white;
+}
+
+#nm{
+
+    height: 563px;
 }
 
 

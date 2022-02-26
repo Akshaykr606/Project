@@ -11,8 +11,6 @@
 
   <!-- Favicons -->
   <link href="/static/user_template/img/AVLOGO.jpg" rel="icon">
-{#  <link href="/static/user_template/img/apple-touch-icon.png" rel="apple-touch-icon">#}
-
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
@@ -40,14 +38,12 @@
     <div class="container d-flex align-items-center">
 
       <h1 class="logo me-auto"><a href="#">ALGORITHM VISUALIZER</a></h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a hrmerge.htmlhtml" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="#algorithm">Algorithms</a></li>
           <li><a class="nav-link scrollto" href="#quiz">Quiz</a></li>
+          <li><a class="nav-link scrollto" href="/info">Info</a></li>
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
           <li><a class="getstarted scrollto" href="/">Logout</a></li>
 
@@ -203,8 +199,8 @@
            <div class="row content">
           <div class="col-lg-12" align="center">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+
+                Test your knowledge on Algorithms data structures. Click the button below to participate in the Quiz.
             </p>
               <a href="/quiz" class="btn-learn-more">Get Started</a>
           </div>
@@ -213,34 +209,6 @@
       </div>
     </section>
 
-
-{#       <div class="section-title">#}
-{#          <h2>About Us</h2>#}
-{#        </div>#}
-{#        <div class="row content">#}
-{#          <div class="col-lg-6">#}
-{#            <p>#}
-{#              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore#}
-{#              magna aliqua.#}
-{#            </p>#}
-{#            <ul>#}
-{#              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>#}
-{#              <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit</li>#}
-{#              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>#}
-{#            </ul>#}
-{#          </div>#}
-{#          <div class="col-lg-6 pt-4 pt-lg-0">#}
-{#            <p>#}
-{#              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate#}
-{#              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in#}
-{#              culpa qui officia deserunt mollit anim id est laborum.#}
-{#            </p>#}
-{#            <a href="#" class="btn-learn-more">Learn More</a>#}
-{#          </div>#}
-{#        </div>#}
-{##}
-{#      </div>#}
-{#    </section><!-- End About Us Section -->#}
 
 
     <!-- ======= Contact Section ======= -->
@@ -256,10 +224,9 @@
           <div class="col-lg-6 d-flex align-items-stretch">
             <div class="info">
               <div class="text-center">
-{#                <i class="bi bi-geo-alt"></i>#}
                 <h3 id="h4"><strong>Doubt</strong></h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p><br><br><br>
+                Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p><br><br>
                    <div class="text-center">
                        <a href="/dbs"><button type="submit">Ask Doubts</button></a></div>
               </div>
@@ -271,36 +238,23 @@
             <form action="/userindexpost" method="post" role="form" class="php-email-form">
               <div class="row">
                 <div class="text-center">
-{#                  <label for="name">Your Name</label>#}
-{#                  <input type="text" name="name" class="form-control" id="name" required>#}
-{#                </div>#}
-{#                <div class="form-group col-md-6">#}
-{#                  <label for="name">Your Email</label>#}
-{#                  <input type="email" class="form-control" name="email" id="email" required>#}
-{#                </div>#}
-{#              </div>#}
-{#              <div class="form-group">#}
-{#                <label for="name">Subject</label>#}
-{#                <input type="text" class="form-control" name="subject" id="subject" required>#}
-{#              </div>#}
-
               <div class="form-group">
-                  <h3 id="h4"><strong>Feedback</strong></h3>
-                <textarea class="form-control" name="feed" rows="10" required></textarea>
+                    <h3 id="h4"><strong>Feedback</strong></h3>
+                    <textarea class="form-control" name="feed" rows="6"></textarea>
               </div>
               <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your feedback has been sent. Thank you!</div>
+                    <div class="loading">Loading</div>
+                    <div class="error-message"></div>
+                    <div class="sent-message">Your feedback has been sent. Thank you!</div>
               </div>
-                    <div class="text-center"><button type="submit">Send Feedback</button></div>
+              <div id="fd_btn">
+                    <button type="submit">Send Feedback</button><a href="/freply1"><button type="button" id="fd-btn">View Reply</button></a>
+              </div><br>
                 </div>
               </div>
             </form>
           </div>
-
         </div>
-
       </div>
     </section><!-- End Contact Section -->
 
@@ -308,22 +262,19 @@
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
-
     <div class="footer-top">
       <div class="container">
         <div class="row">
-
           <div class="col-lg-3 col-md-6 footer-contact">
             <h3>ALGORITHM VISUALIZER</h3>
             <p>
               St. Joseph's College (Autonomous), Devagiri<br>
               Medical College P O, Kozhikode<br>
               Kerala <br><br>
-              <strong>Phone:&nbsp;&nbsp;</strong>+91 8943447931<br>
+{#              <strong>Phone:&nbsp;&nbsp;</strong>+91 -------------<br>#}
               <strong>Email:&nbsp;&nbsp;&nbsp;&nbsp;</strong>visualiseralgorithm@gmail.com<br>
             </p>
           </div>
-
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
@@ -331,10 +282,9 @@
               <li><i class="bx bx-chevron-right"></i> <a href="#quiz">Quiz</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#algorithm">Algorithms</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="/dbs">Doubts</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#contact">Feedback</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/info">INFO</a></li>
             </ul>
           </div>
-
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Team Members</h4>
             <ul>
@@ -343,7 +293,6 @@
               <li><i class="bx bx-chevron-right"></i> <a>Akshay KR</a></li>
             </ul>
           </div>
-
           <div class="col-lg-3 col-md-6 footer-links">
 {#            <h4>Our Social Networks</h4>#}
             <div class="social-links mt-3"><br><br><br>

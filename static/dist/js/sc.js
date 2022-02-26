@@ -149,10 +149,10 @@ buttons.pop.onclick = () => {
     if (!stack.isEmpty()) {
 
 
-        alert("2")
+        // alert("2")
 
         var data = stack.dequeue();
-        alert(data)
+        // alert(data)
          if (data.length == 0)
         {
             stack.clear();
@@ -169,7 +169,7 @@ buttons.pop.onclick = () => {
         {
 
 
-            alert("1")
+            // alert("1")
  items.childNodes[0].classList.add('popAnimation');
             stack.clear();
             items.classList.add('stack-items--remove');
